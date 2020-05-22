@@ -1,0 +1,2 @@
+FocalDistance,PinholeDistance,CCDX,CCDY,MirrorX,MirrorY,CurvatureRadious,MinWedgeDistance,MaxWedgeDistance
+8,72.70,5,4.5,1000,40,1000,30,50
