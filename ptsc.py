@@ -1,3 +1,5 @@
+import pandas as pd
+import numpy as np
 parameters = pd.read_csv('parameters.csv', sep = '\t')
 
 class NullScreenTest(parameters):
