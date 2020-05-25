@@ -1,4 +1,4 @@
-parameters = read_csv('parameters.csv', sep = '\t')
+parameters = pd.read_csv('parameters.csv', sep = '\t')
 
 class NullScreenTest(parameters):
 	
