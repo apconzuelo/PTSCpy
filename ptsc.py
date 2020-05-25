@@ -1,7 +1,7 @@
-class NullScreenTest(parameters = list()):
+class NullScreenTest():
 	
 	
-	def __init__(self,parameters):
+	def __init__(self, parameters = []):
 		self.par = parameters
 	
 	def create_ideal_pattern(self):
