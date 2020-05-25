@@ -8,8 +8,10 @@ class NullScreenTest():
 		self.par = parameters
 	
 	def create_ideal_pattern(self):
-		x = np.linspace(0, 1, 500)*self.par.CCDX - self.par.CCDX/2
-		y = np.linspace(0, 1, 500)*self.par.CCDY - self.par.CCDY/2
+		p1 = np.zeros(3, 500)
+		p1[0‚ :] = np.linspace(0, 1, 500)*self.par.CCDX - self.par.CCDX/2
+		p1[1, :] = np.linspace(0, 1, 500)*self.par.CCDY - self.par.CCDY/2
+		p1[2, :] = p1[2, :] + self.par.FocalLength + self.par.b
 
 	def generate_NS(self):
 		self.p1 = self.create_ideal_pattern()
