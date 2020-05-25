@@ -6,7 +6,9 @@ class NullScreenTest():
 	
 	def __init__(self, parameters = []):
 		self.par = parameters
+		self.p1 = []
 	
+	@classmethod()
 	def create_ideal_pattern(self):
 		p1 = np.zeros(3, 500)
 		p1[0‚ :] = np.linspace(0, 1, 500)*self.par.CCDX - self.par.CCDX/2
