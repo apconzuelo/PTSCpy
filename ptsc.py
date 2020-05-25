@@ -1,11 +1,7 @@
-import pandas as pd
-import numpy as np
-parameters = pd.read_csv('parameters.csv', sep = '\t')
-
 class NullScreenTest(parameters):
 	
 	
-	def __init__(self,parameters):
+	def __init__(self,parameters = None):
 		self.par = parameters
 	
 	def create_ideal_pattern(self):
