@@ -1,3 +1,6 @@
+import numpy as np
+import pandas as pd
+
 class NullScreenTest():
 	
 	
@@ -5,8 +8,8 @@ class NullScreenTest():
 		self.par = parameters
 	
 	def create_ideal_pattern(self):
-		x = np.linspace(0, 1, par.NumberOfPoints)*self.par.CCDx - self.par.CCDx/2
-		y = np.linspace(0, 1, par.NumberOfPoints)*self.par.CCDy - self.par.CCDy/2
+		x = np.linspace(0, 1, 500)*self.par.CCDX - self.par.CCDX/2
+		y = np.linspace(0, 1, 500)*self.par.CCDY - self.par.CCDY/2
 
 	def generate_NS(self):
 		self.p1 = self.create_ideal_pattern()
