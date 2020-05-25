@@ -1,4 +1,4 @@
-class NullScreenTest(parameters = None):
+class NullScreenTest(parameters = list()):
 	
 	
 	def __init__(self,parameters):
