@@ -1,3 +1,5 @@
+parameters = read_csv('parameters.csv', sep = '\t')
+
 class NullScreenTest(parameters):
 	
 	
