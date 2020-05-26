@@ -8,6 +8,12 @@ class CriticalRayPoint():
 			self.p = np.dstack([x, y, z])
 		else:
 			raise('Cannot create CriticalRayPoint, input inexistent')
+			
+	def separate(self):
+		x = self.p[:,:,0]
+		y = self.p[:,:,1]
+		z = self.p[:,:,2]
+		return x, y, z
 
 
 	
