@@ -6,13 +6,13 @@ class NullScreenTest():
 	
 	def __init__(self, parameters = []):
 		self.par = parameters
-		self.p1 = np.zeros([3, 500])
+		#self.p1 = np.zeros([3, 500])
 	
 	def create_ideal_pattern(self):
-		
-		p1[0‚ :] = np.linspace(-1, 1, 500)*self.par.CCDX.values 
-		p1[1, :] = np.linspace(-1, 1, 500)*self.par.CCDY.values
-		p1[2, :] = p1[2, :]*(self.par.FocalLength.values + self.par.b.values)
+		x = np.linspace(-1, 1, 500)*self.par.CCDX.values 
+		y = np.linspace(-1, 1, 500)*self.par.CCDY.values
+		z = np.ones([1, 500])*(self.par.FocalLength.values + self.par.b.values)
+		return np.vstack([x, y, z])
 
 	def generate_NS(self):
 		self.p1 = self.create_ideal_pattern()
