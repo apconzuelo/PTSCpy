@@ -5,14 +5,14 @@ class CriticalRayPoint():
 	
 	def __init__(self, x=None, y=None, z=None):
 		if len(x) > 0:
-			self = np.vstack([x, y, z]).T
+			self.p = np.vstack([x, y, z]).T
 		else:
 			raise('Cannot create CriticalRayPoint, input inexistent')
 			
 	def separate(self):
-		x = self[:, 0]
-		y = self[:, 1]
-		z = self[:, 2]
+		x = self.p[:, 0]
+		y = self.p[:, 1]
+		z = self.p[:, 2]
 		return x, y, z
 	
 	
