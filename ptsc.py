@@ -6,7 +6,7 @@ class NullScreenTest():
 	
 	def __init__(self, parameters = []):
 		self.par = parameters
-		self.p1 = np.linspace(-1, 1, 500)
+		self.p1 = np.zeros([3, 500])
 	
 	def create_ideal_pattern(self):
 		
