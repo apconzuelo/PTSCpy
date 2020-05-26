@@ -31,4 +31,3 @@ class NullScreenTest():
 		self.p3 = self.project_to_NullScreen()	
 		
 		
-NullScreenTest()
