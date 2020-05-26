@@ -6,7 +6,7 @@ class CriticalRayPoint():
 	def __init__(self, x=None, y=None, z=None):
 		if len(x) > 0:
 			self = np.vstack([x, y, z]).T
-		else
+		else:
 			raise('Cannot create CriticalRayPoint, input inexistent')
 			
 	def separate(self):
@@ -30,7 +30,7 @@ class NullScreenTest():
 		x = np.linspace(-1, 1, 500)*self.par.CCDX.values 
 		y = np.linspace(-1, 1, 500)*self.par.CCDY.values
 		z = np.ones([1, 500])*(self.par.FocalDistance.values + self.par.PinholeDistance.values)
-		return np.vstack([x, y, z])
+		return CriticalRayPoint(x, y, z)
 
 	def generate_NS(self):
 		self.p1 = self.create_ideal_pattern()
