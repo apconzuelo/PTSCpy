@@ -1,12 +1,13 @@
 import numpy as np
 #import pandas as pd
 
+#Define clase NullScreenTest
 class NullScreenTest():
 	
 	
 	def __init__(self, parameters = []):
-		self.par = parameters
-		self.p1 = np.linspace(-1, 1, 500)
+		#self.par = parameters
+		self.p1 = parameters
 	
 	def create_ideal_pattern(self):
 		'''
