@@ -5,7 +5,7 @@ class CriticalRayPoint():
 	
 	def __init__(self, x=None, y=None, z=None):
 		if len(x) > 0:
-			self.p = np.dstack([x.T, y.T, z.T])
+			self.p = np.dstack([x, y, z])
 		else:
 			raise('Cannot create CriticalRayPoint, input inexistent')
 
