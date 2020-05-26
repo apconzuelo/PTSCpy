@@ -6,9 +6,9 @@ class NullScreenTest():
 	
 	def __init__(self, parameters = []):
 		self.par = parameters
+		self.p1 = np.linspace(-1, 1, 500)
 	
 	def create_ideal_pattern(self):
-		p1 = np.ones([3, 500])
 		'''
 		p1[0‚ :] = np.linspace(-1, 1, 500)*self.par.CCDX.values[0] 
 		p1[1, :] = np.linspace(-1, 1, 500)*self.par.CCDY.values[0]
