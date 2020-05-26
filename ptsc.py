@@ -22,7 +22,7 @@ class NullScreenTest():
 		
 	def __init__(self, parameters = None):
 		self.par = parameters
-		self.p = self.Ray(0, 0, self.par.PinholeDistance.values)
+		self.p = Ray(0, 0, self.par.PinholeDistance.values)
 		self.p1 = self.create_ideal_pattern()
 		self.p2 = self.project_sensor_to_surface()
 
