@@ -11,7 +11,7 @@ class NullScreenTest():
 	def create_ideal_pattern(self):
 		x = np.linspace(-1, 1, 500)*self.par.CCDX.values 
 		y = np.linspace(-1, 1, 500)*self.par.CCDY.values
-		z = np.ones([1, 500])*(self.par.FocalLength.values + self.par.b.values)
+		z = np.ones([1, 500])*(self.par.FocalDistance.values + self.par.b.values)
 		return np.vstack([x, y, z])
 
 	def generate_NS(self):
