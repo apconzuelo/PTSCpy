@@ -27,9 +27,11 @@ class NullScreenTest():
 		self.p1 = self.create_ideal_pattern()
 	
 	def create_ideal_pattern(self):
-		x = np.linspace(-1, 1, 500)*self.par.CCDX.values 
-		y = np.linspace(-1, 1, 500)*self.par.CCDY.values
-		z = np.ones([1, 500])*(self.par.FocalDistance.values + self.par.PinholeDistance.values)
+		xl = np.linspace(-1, 1, 500)*self.par.CCDX.values 
+		yl = np.linspace(-1, 1, 500)*self.par.CCDY.values
+		
+		x, y = np.meshgrid(xl, yl)
+		z = np.ones(xl.shape)*(self.par.FocalDistance.values + self.par.PinholeDistance.values)
 		return CriticalRayPoint(x, y, z)
 
 	def generate_NS(self):
