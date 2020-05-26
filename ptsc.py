@@ -1,5 +1,5 @@
 import numpy as np
-import pandas as pd
+#import pandas as pd
 
 class NullScreenTest():
 	
@@ -18,7 +18,6 @@ class NullScreenTest():
 		
 		p1[2, :] = p1[2, :]*(self.par.FocalLength.values[0] + self.par.b.values[0])
 		'''
-		return p1
 
 	def generate_NS(self):
 		self.p1 = self.create_ideal_pattern()
