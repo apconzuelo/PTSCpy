@@ -7,7 +7,7 @@ class NullScreenTest():
 	
 	def __init__(self, parameters = []):
 		self.par = parameters
-		self.p1 = []
+		self.p1 = parameters
 	
 	def create_ideal_pattern(self):
 		'''
