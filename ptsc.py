@@ -9,8 +9,7 @@ class CriticalRayPoint():
 		else:
 			raise('Cannot create CriticalRayPoint, input inexistent')
 
-	
-	
+
 	
 class NullScreenTest():
 		
@@ -23,10 +22,13 @@ class NullScreenTest():
 		yl = np.linspace(-1, 1, 500)*self.par.CCDY.values
 		
 		x, y = np.meshgrid(xl, yl)
-		z = np.ones(xl.shape)*(self.par.FocalDistance.values + self.par.PinholeDistance.values)
+		z = 0*x + (self.par.FocalDistance.values + self.par.PinholeDistance.values)
 		return CriticalRayPoint(x, y, z)
 
 	def generate_NS(self):
 		self.p1 = self.create_ideal_pattern()
 		self.p2 = self.project_to_surface()
 		self.p3 = self.project_to_NullScreen()	
+		
+		
+NullScreenTest()
