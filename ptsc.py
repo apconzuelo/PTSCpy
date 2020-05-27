@@ -4,12 +4,12 @@ import numpy as np
 class Ray():
 	
 	def __init__(self, x= None, y= None, z=None, p=None):	
+		if type(x) != numpy.ndarray:
+			print(type(x))
+			raise('X is not a vector')
 		if np.array(p != None).any():
 			self.p = p
 		elif np.array(x != None).any():
-			if type(x) != numpy.ndarray:
-				print(type(x))
-				raise('X is not a vector')
 			self.p = np.dstack([x, y, z])
 		else:
 			raise("Invalid input for Ray Creation, x not a vector")
