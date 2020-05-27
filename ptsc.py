@@ -6,7 +6,7 @@ class Ray():
 	def __init__(self, x=None, y=None, z=None, p = None):
 		if p != None:
 			self.p = p
-		elif x != None:
+		elif a.any(x != None):
 			self.p = np.dstack([x, y, z])
 		else:
 			raise('Cannot create CriticalRayPoint, input inexistent')
@@ -22,12 +22,14 @@ class Ray():
 		norm = scale/np.dstack([norm, norm, norm])
 		return  factorRay(self, norm)
 		
+		
+		
 	
 class NullScreenTest():
 		
 	def __init__(self, parameters = None):
 		self.par = parameters
-		self.p = Ray(x=0, y=0, z= 80)#self.par.PinholeDistance.values)
+		self.p = Ray(x=0, y=0, z= self.par.PinholeDistance.values)
 		self.p1 = self.create_ideal_pattern()
 		self.p2 = self.project_sensor_to_surface()
 
