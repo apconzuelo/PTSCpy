@@ -6,10 +6,10 @@ class Ray():
 	def __init__(self, x=None, y=None, z=None, p = None):
 		if p != None
 			self.p = p
-		elif None in x:
-			self.p = np.dstack([x, y, z])
 		else:
-			raise('Cannot create CriticalRayPoint, input inexistent')
+			self.p = np.dstack([x, y, z])
+			
+			
 			
 	def separate(self):
 		x = self.p[:,:,0]
