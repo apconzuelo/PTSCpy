@@ -3,11 +3,10 @@ import numpy as np
 
 class Ray():
 	
-	def __init__(self, x=None, y=None, z=None, p = None):
-		print(p.any())
-		if p.any():
+	def __init__(self, x= None, y= None, z=None, p=None):	
+		if (p != None).any():
 			self.p = p
-		elif x.any():
+		elif (x != None).any():
 			self.p = np.dstack([x, y, z])
 		else:
 			raise("Invalid input for Ray Creation, x not a vector")
