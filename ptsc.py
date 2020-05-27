@@ -4,7 +4,7 @@ import numpy as np
 class Ray():
 	
 	def __init__(self, x=None, y=None, z=None, p = None):
-		if any(p > -1000000)
+		if any(p > -1000000):
 			self.p = p
 		else:
 			self.p = np.dstack([x, y, z])
