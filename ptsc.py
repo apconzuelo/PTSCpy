@@ -29,23 +29,23 @@ class NullScreenTest():
 		
 	def __init__(self, parameters = None):
 		self.par = parameters
-		self.p = Ray(x=0, y=0, z= 80)# self.par.PinholeDistance.values)
+		self.p = Ray(x=0, y=0, z= self.par.PinholeDistance.values[0])
 		self.p1 = self.create_ideal_pattern()
 		self.p2 = self.project_sensor_to_surface()
 
 	def create_ideal_pattern(self):
-		
+		'''
 		xl = np.linspace(-1, 1, 500)*5 
 		yl = np.linspace(-1, 1, 500)*5
 		x, y = np.meshgrid(xl, yl)
 		z = 0*x + 80
 
 		'''
-		xl = np.linspace(-1, 1, 500)*self.par.CCDX.values 
-		yl = np.linspace(-1, 1, 500)*self.par.CCDY.values
+		xl = np.linspace(-1, 1, 500)*self.par.CCDX.values[0] 
+		yl = np.linspace(-1, 1, 500)*self.par.CCDY.values[0]
 		x, y = np.meshgrid(xl, yl)
-		z = 0*x + (self.par.FocalDistance.values + self.par.PinholeDistance.values)
-		'''
+		z = 0*x + (self.par.FocalDistance.values[0] + self.par.PinholeDistance.values[0])
+		
 		return Ray(x = x, y = y, z = z)
 		
 	def project_sensor_to_surface(self): 
