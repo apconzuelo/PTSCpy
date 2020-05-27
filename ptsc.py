@@ -4,7 +4,7 @@ import numpy as np
 class Ray():
 	
 	def __init__(self, x=None, y=None, z=None, p = None):
-		if type(p) == numpy.ndarray
+		if any(p == numpy.ndarray)
 			self.p = p
 		else:
 			self.p = np.dstack([x, y, z])
