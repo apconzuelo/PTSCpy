@@ -6,7 +6,7 @@ class Ray():
 	def __init__(self, x=None, y=None, z=None, p = None):
 		if p != None
 			self.p = p
-		elif any(x) != None:
+		elif None in x:
 			self.p = np.dstack([x, y, z])
 		else:
 			raise('Cannot create CriticalRayPoint, input inexistent')
