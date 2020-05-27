@@ -4,9 +4,9 @@ import numpy as np
 class Ray():
 	
 	def __init__(self, x= None, y= None, z=None, p=None):	
-		if (p != None).any():
+		if np.array((p != None)).any():
 			self.p = p
-		elif (x != None).any():
+		elif np.array((x != None)).any():
 			self.p = np.dstack([x, y, z])
 		else:
 			raise("Invalid input for Ray Creation, x not a vector")
@@ -31,15 +31,15 @@ class NullScreenTest():
 		
 	def __init__(self, parameters = None):
 		self.par = parameters
-		self.p = Ray(x=0, y=0, z= self.par.PinholeDistance.values)
+		self.p = Ray(x=0, y=0, z= 80)#self.par.PinholeDistance.values)
 		self.p1 = self.create_ideal_pattern()
 		self.p2 = self.project_sensor_to_surface()
 
 	def create_ideal_pattern(self):
-		xl = np.linspace(-1, 1, 500)*self.par.CCDX.values 
-		yl = np.linspace(-1, 1, 500)*self.par.CCDY.values
+		xl = np.linspace(-1, 1, 500)*5#self.par.CCDX.values 
+		yl = np.linspace(-1, 1, 500)*5#self.par.CCDY.values
 		x, y = np.meshgrid(xl, yl)
-		z = 0*x + (self.par.FocalDistance.values + self.par.PinholeDistance.values)
+		z = 0*x + 80#(self.par.FocalDistance.values + self.par.PinholeDistance.values)
 		return Ray(x = x, y = y, z = z)
 		
 	def project_sensor_to_surface(self): 
@@ -64,5 +64,8 @@ def addRay(A, B):
 	return Ray(x = xa + xb, y = ya + yb, z = za + zb)
 	
 def factorRay(A, B):
-	return Ray(A.p * B)
+	return Ray(p = A.p * B)
 	
+	
+sim = NullScreenTest()
+sim.p1
