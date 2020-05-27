@@ -4,9 +4,9 @@ import numpy as np
 class Ray():
 	
 	def __init__(self, x= None, y= None, z=None, p=None):	
-		if np.array((p != None)).any():
+		if np.array(p != None).any():
 			self.p = p
-		elif np.array((x != None)).any():
+		elif np.array(x != None).any():
 			self.p = np.dstack([x, y, z])
 		else:
 			raise("Invalid input for Ray Creation, x not a vector")
