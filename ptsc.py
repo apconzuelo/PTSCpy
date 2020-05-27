@@ -4,10 +4,12 @@ import numpy as np
 class Ray():
 	
 	def __init__(self, x=None, y=None, z=None, p = None):
-		if any(p > -1000000):
+		if p.any()
 			self.p = p
-		else:
+		elif x.any():
 			self.p = np.dstack([x, y, z])
+		else:
+			raise("Invalid input for Ray Creation, x not a vector")
 			
 			
 			
