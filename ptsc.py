@@ -4,9 +4,9 @@ import numpy as np
 class Ray():
 	
 	def __init__(self, x=None, y=None, z=None, p = None):
-		if p != None:
+		if p != None
 			self.p = p
-		elif a.any(x != None):
+		elif any(x) != None:
 			self.p = np.dstack([x, y, z])
 		else:
 			raise('Cannot create CriticalRayPoint, input inexistent')
