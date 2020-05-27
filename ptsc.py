@@ -28,8 +28,8 @@ class Ray():
 class NullScreenTest():
 		
 	def __init__(self, parameters = None):
-		self.par = parameters
-		self.p = Ray(x=0, y=0, z= self.par.PinholeDistance.values[0])
+		self.par = parameters.to_dict('records')[0]
+		self.p = Ray(x=0, y=0, z= self.par.PinholeDistance)
 		self.p1 = self.create_ideal_pattern()
 		self.p2 = self.project_sensor_to_surface()
 
@@ -41,10 +41,10 @@ class NullScreenTest():
 		z = 0*x + 80
 
 		'''
-		xl = np.linspace(-1, 1, 500)*self.par.CCDX.values[0] 
-		yl = np.linspace(-1, 1, 500)*self.par.CCDY.values[0]
+		xl = np.linspace(-1, 1, 500)*self.par.CCDX 
+		yl = np.linspace(-1, 1, 500)*self.par.CCDY
 		x, y = np.meshgrid(xl, yl)
-		z = 0*x + (self.par.FocalDistance.values[0] + self.par.PinholeDistance.values[0])
+		z = 0*x + (self.par.FocalDistance + self.par.PinholeDistance)
 		
 		return Ray(x = x, y = y, z = z)
 		
