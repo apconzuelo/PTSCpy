@@ -4,7 +4,8 @@ import numpy as np
 class Ray():
 	
 	def __init__(self, x=None, y=None, z=None, p = None):
-		if p.any()
+		print(p.any())
+		if p.any():
 			self.p = p
 		elif x.any():
 			self.p = np.dstack([x, y, z])
