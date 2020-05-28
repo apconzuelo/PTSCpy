@@ -39,8 +39,8 @@ class NullScreenTest():
 		yl = np.linspace(-1, 1, 500)*5
 		x, y = np.meshgrid(xl, yl)
 		z = 0*x + 80
-
 		'''
+		
 		xl = np.linspace(-1, 1, 500)*self.par.CCDX 
 		yl = np.linspace(-1, 1, 500)*self.par.CCDY
 		x, y = np.meshgrid(xl, yl)
@@ -49,9 +49,18 @@ class NullScreenTest():
 		return Ray(x = x, y = y, z = z)
 		
 	def project_sensor_to_surface(self): 
-		t = 1
-		I = addRay(self.p, self.p1.scaleRay(-1)).scaleRay(t)
-		return addRay(self.p1, I)
+		r = self.par.CurvatureRadious
+		I = addRay(self.p, self.p1.scaleRay(-1))
+		x, y, z = separate(self.p1)
+		Ix, Iy, Iz = separate(I)
+		
+		A = Iz**2
+		B = 2*(Iz - r*Iy)
+		C = (z**2 - 2*r*y)
+		
+		t = -B + np.sqrt(B**2 - 4*A*C)
+		t = t/I**2
+		return addRay(self.p1, I.scaleRay(t))
 	
 	def project_surface_to_screen(self):
 		w = 1
