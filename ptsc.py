@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from types import SimpleNamespace 
 
 class Ray():
 	
@@ -29,6 +30,7 @@ class NullScreenTest():
 		
 	def __init__(self, parameters = None):
 		self.par = parameters.to_dict('records')[0]
+		self.par = SimpleNamespace(**self.par)
 		#self.p = Ray(x=0, y=0, z= self.par.PinholeDistance)
 		#self.p1 = self.create_ideal_pattern()
 		#self.p2 = self.project_sensor_to_surface()
