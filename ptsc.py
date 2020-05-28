@@ -1,5 +1,5 @@
 import numpy as np
-import pandas as pd
+#import pandas as pd
 from types import SimpleNamespace 
 
 class Ray():
@@ -21,7 +21,9 @@ class Ray():
 	def scaleRay(self, scale = 1):
 		norm = np.sqrt(np.sum(self.p**2, axis = 2))
 		norm = scale/norm
-		return  factorRay(self, np.dstack[norm, norm, norm])
+		#ScaledRay = factorRay(self, np.dstack([norm, norm, norm]))
+		return  factorRay(self, np.dstack([norm, norm, norm]))
+		
 		
 		
 		
@@ -46,11 +48,12 @@ class NullScreenTest():
 		yl = np.linspace(-1, 1, 500)*self.par.CCDY
 		x, y = np.meshgrid(xl, yl)
 		z = 0*x + (self.par.FocalDistance + self.par.PinholeDistance)
-		
+
 		return Ray(x = x, y = y, z = z)
 		
 	def project_sensor_to_surface(self): 
 		r = self.par.CurvatureRadious
+		#r = 500
 		I = addRay(self.p, self.p1.scaleRay(-1))
 		x, y, z = self.p1.separate()
 		Ix, Iy, Iz = I.separate()
@@ -81,5 +84,5 @@ def factorRay(A, B):
 	return Ray(p = A.p * B)
 	
 	
-#sim = NullScreenTest()
+sim = NullScreenTest()
 #print(sim.p2)
