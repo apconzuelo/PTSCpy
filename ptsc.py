@@ -52,8 +52,8 @@ class NullScreenTest():
 	def project_sensor_to_surface(self): 
 		r = self.par.CurvatureRadious
 		I = addRay(self.p, self.p1.scaleRay(-1))
-		x, y, z = separate(self.p1)
-		Ix, Iy, Iz = separate(I)
+		x, y, z = self.p1.separate()
+		Ix, Iy, Iz = I.separate()
 		
 		A = Iz**2
 		B = 2*(Iz - r*Iy)
