@@ -84,5 +84,5 @@ def factorRay(A, B):
 	return Ray(p = A.p * B)
 	
 	
-sim = NullScreenTest()
+#sim = NullScreenTest()
 #print(sim.p2)
