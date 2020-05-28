@@ -20,8 +20,8 @@ class Ray():
 		
 	def scaleRay(self, scale = 1):
 		norm = np.sqrt(np.sum(self.p**2, axis = 2))
-		norm = scale/np.dstack([norm, norm, norm])
-		return  factorRay(self, norm)
+		norm = scale/norm
+		return  factorRay(self, dstack[norm, norm, norm])
 		
 		
 		
