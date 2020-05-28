@@ -30,9 +30,9 @@ class NullScreenTest():
 		
 	def __init__(self, parameters = None):
 		self.par = parameters
-		#self.p = Ray(x=0, y=0, z= parameters.PinholeDistance)
-		#self.p1 = self.create_ideal_pattern()
-		#self.p2 = self.project_sensor_to_surface()
+		self.p = Ray(x=0, y=0, z= parameters.PinholeDistance)
+		self.p1 = self.create_ideal_pattern()
+		self.p2 = self.project_sensor_to_surface()
 
 	def create_ideal_pattern(self):
 		'''
