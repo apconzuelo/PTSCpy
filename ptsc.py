@@ -60,7 +60,7 @@ class NullScreenTest():
 		C = (z**2 - 2*r*y)
 		
 		t = -B + np.sqrt(B**2 - 4*A*C)
-		t = t/I**2
+		t = t/(2*A)
 		return addRay(self.p1, I.scaleRay(t))
 	
 	def project_surface_to_screen(self):
